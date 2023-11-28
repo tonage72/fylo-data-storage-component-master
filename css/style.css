@@ -31,7 +31,7 @@ body {
 	display: grid;
 	justify-content: left;
 	grid-template-columns: auto auto auto;
-	grid-template-rows: 40% auto;
+	grid-template-rows: auto auto;
 	grid-template-areas:
 		"logo logo logo"
 		"documenticon foldericon uploadicon";
@@ -40,27 +40,37 @@ body {
 	background-color: hsl(228, 56%, 26%);
 }
 
-#logo {
+.card1 figure:first-child {
 	grid-area: logo;
 	width: 80%;
 }
 
-.card1 img:nth-child(2),
-.card1 img:nth-child(3),
-.card1 img:nth-child(4) {
-	background-color: hsl(229, 57%, 11%);
-	padding: 10px;
-	width: 50px;
-}
-
-.card1 img:nth-child(2) {
+.card1 figure:nth-child(2) {
 	grid-area: documenticon;
 }
 
-.card1 img:nth-child(3) {
+.card1 figure:nth-child(3) {
 	grid-area: foldericon;
 }
 
-.card1 img:nth-child(4) {
+.card1 figure:nth-child(4) {
 	grid-area: uploadicon;
+}
+
+.card1 figure:nth-child(2),
+.card1 figure:nth-child(3),
+.card1 figure:nth-child(4) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: hsl(229, 57%, 11%);
+	padding: width;
+	width: 50px;
+	height: 50px;
+}
+
+.card1 figure:nth-child(2) img,
+.card1 figure:nth-child(3) img,
+.card1 figure:nth-child(4) img {
+	width: 30px;
 }
