@@ -28,6 +28,7 @@ body {
 	gap: 1.2rem;
 	height: 100dvh;
 	background-image: url('../images/bg-mobile.png');
+	background-size: cover;
 }
 
 .card1,
@@ -54,12 +55,26 @@ body {
 	width: 80%;
 	padding: 3px;
 	background-color: hsl(229, 57%, 11%);
+	border-radius: 1rem;
 }
 
 .progress-bar-inner {
+	position: relative;
 	width: 81.5%;
 	height: 1rem;
 	background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+	border-radius: 1rem;
+}
+
+.progress-bar-inner::after {
+	position: absolute;
+	content: "";
+	width: .8rem;
+	height: .8rem;
+	background-color: white;
+	right: .1rem;
+	top: .1rem;
+	border-radius: 50%;
 }
 
 /* Logo */
@@ -138,7 +153,7 @@ body {
 	position: absolute;
 	border-radius: 1rem;
 	color: black;
-	bottom: -45px;
+	bottom: -40px;
 	padding: 1rem 2rem;
 }
 
@@ -154,10 +169,19 @@ body {
 }
 
 .attribution {
+	margin-top: 3rem;
 	font-size: 11px;
 	text-align: center;
 }
 
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1000px) {
+	
+	body {
+		background-image: url('../images/bg-desktop.png');
+		background-size: cover;
+	}
 }
