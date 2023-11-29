@@ -6,10 +6,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Fylo data storage component</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <div class="card1">
@@ -25,16 +21,25 @@
     <figure>
       <img src="images/icon-upload.svg" alt="">
     </figure>
-    
   </div>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
+  <div class="card2">
+    <p>You’ve used 815 GB of your storage</p>
+    <div class="progress-bar-outer">
+      <div class="progress-bar-inner">
+      </div>
+    </div>
+    <p>
+      <span>
+        0 GB
+      </span>
+      <span>
+        1000 GB
+      </span>
+    </p>
+  </div>
+  <div class="popout">
+      185 GB Left
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

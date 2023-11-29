@@ -16,6 +16,7 @@ img {
 html {
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
+	color: white;
 }
 
 body {
@@ -23,8 +24,17 @@ body {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
+	padding: 0 2rem;
+	gap: 1.2rem;
 	height: 100dvh;
 	background-image: url('../images/bg-mobile.png');
+}
+
+.card1,
+.card2 {
+	background-color: hsl(228, 56%, 26%);
+	width: 100%;
+	border-radius: 1rem;
 }
 
 .card1 {
@@ -35,11 +45,49 @@ body {
 	grid-template-areas:
 		"logo logo logo"
 		"documenticon foldericon uploadicon";
-	width: 90%;
-	gap: 20px;
-	background-color: hsl(228, 56%, 26%);
+	padding: 3rem 0 2.5rem 3rem;
+	border-radius: 1rem 8rem 1rem 1rem;
+	gap: 3rem 1rem;
 }
 
+.card2 {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: top;
+	gap: 1rem;
+	padding: 2.5rem 0 5.5rem 0;
+}
+
+.card2 p {
+	position: relative;
+	width: 80%;
+	text-align: center;
+}
+
+.card2 p span:first-child {
+	position: absolute;
+	left: 0;
+}
+
+.card2 p span:nth-child(2) {
+	position: absolute;
+	right: 0;
+}
+
+.progress-bar-outer {
+	width: 80%;
+	padding: 3px;
+	background-color: hsl(229, 57%, 11%);
+}
+
+.progress-bar-inner {
+	width: 81.5%;
+	height: 1rem;
+	background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+/* Logo */
 .card1 figure:first-child {
 	grid-area: logo;
 	width: 80%;
@@ -57,6 +105,7 @@ body {
 	grid-area: uploadicon;
 }
 
+/* figure for icons */
 .card1 figure:nth-child(2),
 .card1 figure:nth-child(3),
 .card1 figure:nth-child(4) {
@@ -67,10 +116,21 @@ body {
 	padding: width;
 	width: 50px;
 	height: 50px;
+	border-radius: 1rem;
 }
 
+/* image of icons */
 .card1 figure:nth-child(2) img,
 .card1 figure:nth-child(3) img,
 .card1 figure:nth-child(4) img {
-	width: 30px;
+	width: 25px;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
 }
