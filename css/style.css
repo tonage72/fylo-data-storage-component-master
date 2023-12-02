@@ -22,7 +22,7 @@ html {
 body {
 	display: flex;
 	flex-flow: column nowrap;
-	align-items: center;
+	align-items: left;
 	justify-content: center;
 	padding: 0 2rem;
 	gap: 1.2rem;
@@ -34,8 +34,8 @@ body {
 .card1,
 .card2 {
 	background-color: hsl(228, 56%, 26%);
-	width: 100%;
 	border-radius: 1rem;
+	width: 100%;
 }
 
 .card1 {
@@ -46,9 +46,11 @@ body {
 	grid-template-areas:
 		"logo logo logo"
 		"documenticon foldericon uploadicon";
-	padding: 3rem 0 2.5rem 3rem;
+	padding: 3rem 3rem 2.5rem 3rem;
 	border-radius: 1rem 8rem 1rem 1rem;
 	gap: 3rem 1rem;
+	max-width: 319px;
+	min-width: 264px;
 }
 
 .progress-bar-outer {
@@ -80,7 +82,7 @@ body {
 /* Logo */
 .card1 figure:first-child {
 	grid-area: logo;
-	width: 80%;
+	width: 150px;
 }
 
 .card1 figure:nth-child(2) {
@@ -124,24 +126,40 @@ body {
 	position: relative;
 	gap: 1rem;
 	padding: 2.5rem 0 5.5rem 0;
+	min-width: 264px;
 }
 
+/* all paragraphs in card2 */
 .card2 p {
 	position: relative;
 	width: 80%;
 	text-align: center;
 }
 
-.card2 p span:first-child {
+/* card2 You've used ..... */
+.card2 p:nth-child(1) {
+	color: hsl(243, 100%, 93%);
+}
+
+/* card2 GB count in above paragraph */
+.card2 p:nth-child(1) span {
+	color: white;
+	font-weight: 700;
+}
+
+/* 0GB */
+.card2 p:nth-child(3) span:first-child {
 	position: absolute;
 	left: 0;
 }
 
-.card2 p span:nth-child(2) {
+/* 1000 GB */
+.card2 p:nth-child(3) span:nth-child(2) {
 	position: absolute;
 	right: 0;
 }
 
+/* white popout box */
 .popout {
 	display: flex;
 	flex-flow: row nowrap;
@@ -157,11 +175,13 @@ body {
 	padding: 1rem 2rem;
 }
 
+/* number of GB in popout */
 .popout span:first-child {
 	font-weight: 700;
 	font-size: 3rem;
 }
 
+/* GB LEFT text in popout */
 .popout span:nth-child(2) {
 	text-transform: uppercase;
 	font-weight: 700;
@@ -177,5 +197,44 @@ body {
 		background-position: bottom;
 		background-size: 100%;
 		flex-flow: row nowrap;
+		align-items: center;
+	}
+
+	.popout {
+		bottom: 130px;
+		right: 10%;
+		border-radius: 1rem 1rem 0 1rem;
+	}
+
+	.popout::after {
+		position: absolute;
+		content: "";
+		width: 20px;
+		height: 20px;
+		background-color: white;
+		bottom: -20px;
+		right: 0px;
+		clip-path: polygon(102% 0, 0 0, 100% 100%);
+	}
+
+	.card2 {
+		position: relative;
+		bottom: -28px;
+		padding-bottom: 4rem;
+		max-width: 609px;
+	}
+}
+
+@media (max-width: 338px) {
+	body {
+		padding: 0;
+	}
+
+	.card1 {
+		max-width: 100%;
+	}
+
+	.card2 p:nth-child(1) {
+		font-size: .92rem;
 	}
 }
